@@ -6,14 +6,14 @@ env = os.getenv('env')
 env = env.lower() if env is not None else 'dev'
 
 ### AWS S3 ###
-s3_secret_name = 'az-latam-brazil-sm-s3-dev' if env != 'prod' else 'az-latam-brazil-sm-s3-prod'
+s3_secret_name = 's3-secret-dev' if env != 'prod' else 's3-secret-prod'
 
 ### Secret Manager
 secrets_service_name='secretsmanager'
 
 ### DIRETÓRIOS DO S3 ###
 temp_folder = '/tmp'
-bucket_staging_name = 'az-latam-brazil-staging' if env != 'prod' else 'az-latam-brazil-staging-prod' 
+bucket_staging_name = 'bucket-staging-dev' if env != 'prod' else 'bucket-staging-prod' 
 bucket_folder = 'IM/AUX_TABLES'
 temp_copy_files_folder = 'IM/TEMP'
     
@@ -24,5 +24,5 @@ logs_date_time = datetime.now()
 logs_origin_att_date = datetime.now()
 
 ### Redshift
-rs_secret_name=f'az-latam-brazil-sm-redshift-ds-{env}'
-rs_schema = 'br_gdsdata_ads'
+rs_secret_name=f'secret-redshift-{env}'
+rs_schema = 'db_schema'
