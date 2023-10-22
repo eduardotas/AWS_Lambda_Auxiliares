@@ -17,7 +17,7 @@ class LogAWSHealth:
         curr = conn.cursor()
 
         sql = f"""
-            INSERT INTO br_gdsdata_ads.aws_health_prod
+            INSERT INTO TABELA_DE_LOGS
             (service, obj_identifier, date_time, status,log_stream, registers_amout, origin_att_date)
             VALUES('{logs_service}','{logs_obj_identifier}','{logs_date_time}','{status}','{message}','{register_amount}','{logs_origin_att_date}');
         """
